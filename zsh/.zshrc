@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ############################### User Setting ###############################
 
-cat ./hello
+cat /Users/olive_sseob/Documents/private_doc/funny/hello
 
 # system default prompt !!
 # PROMPT="%n@%m %1~ %#"
@@ -123,14 +123,15 @@ PROMPT='%n %~ %# %F{green}${vcs_info_msg_0_} ${emojis[$random_emoji]} %f'
 export HOME_BREW="/opt/homebrew/bin"
 export PATH=$HOME_BREW:$PATH
 
-export JAVA_HOME_11="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin"
-export JAVA_HOME_8="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin"
-export JAVA_HOME_7="/Library/Java/JavaVirtualMachines/zulu7.56.0.11-ca-jdk7.0.352-macosx_x64/zulu-7.jdk/Contents/Home/bin"
-export JAVA_HOME=$JAVA_HOME_7
+export JAVA_HOME_11="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+export JAVA_HOME_8="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+export JAVA_HOME_7="/Library/Java/JavaVirtualMachines/zulu7.56.0.11-ca-jdk7.0.352-macosx_x64/zulu-7.jdk/Contents/Home"
+export JAVA_HOME=$JAVA_HOME_8
 export PATH=$JAVA_HOME:$PATH
 
-export MAVEN_HOME="/Library/Maven/apache-maven-3.6.3/bin"
+export MAVEN_HOME="/Library/Maven/apache-maven-3.6.3"
 export PATH=$MAVEN_HOME:$PATH
 
 # sseob alias
 alias sleep='sudo shutdown -s now'
+alias boom='sudo shutdown -h now'
