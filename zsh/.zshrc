@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ############################### User Setting ###############################
 
-cat /Users/olive_sseob/Documents/private_doc/funny/hello
+cat ~/Documents/git-projects/my-profiles/zsh/hello
 
 # system default prompt !!
 # PROMPT="%n@%m %1~ %#"
