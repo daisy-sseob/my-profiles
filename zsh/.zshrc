@@ -70,7 +70,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ############################### User Setting ###############################
 
-cat ~/Documents/git-projects/my-profiles/zsh/hello
+cat ~/Documents/sseob/funny/hello
 
 # system default prompt !!
 # PROMPT="%n@%m %1~ %#"
@@ -117,7 +121,7 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%b'
 
-PROMPT='%n %~ %# %F{green}${vcs_info_msg_0_} ${emojis[$random_emoji]} %f'
+PROMPT='%n %~ %# %F{green}${vcs_info_msg_0_} %F{yellow}%T ${emojis[$random_emoji]} %f'
 
 # sseob env settings
 export HOME_BREW="/opt/homebrew/bin"
@@ -126,7 +130,8 @@ export PATH=$HOME_BREW:$PATH
 export JAVA_HOME_11="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
 export JAVA_HOME_8="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 export JAVA_HOME_7="/Library/Java/JavaVirtualMachines/zulu7.56.0.11-ca-jdk7.0.352-macosx_x64/zulu-7.jdk/Contents/Home"
-export JAVA_HOME=$JAVA_HOME_8
+# export JAVA_HOME=$JAVA_HOME_8
+export JAVA_HOME=$JAVA_HOME_11
 export PATH=$JAVA_HOME:$PATH
 
 export MAVEN_HOME="/Library/Maven/apache-maven-3.6.3"
@@ -135,3 +140,14 @@ export PATH=$MAVEN_HOME:$PATH
 # sseob alias
 alias sleep='sudo shutdown -s now'
 alias boom='sudo shutdown -h now'
+alias restart='sudo shutdown -r now'
+
+# Git 자동완성을 load한다
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/olive_sseob/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
